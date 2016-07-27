@@ -1,7 +1,6 @@
 # react
-> 本项目使用react`(react + react-dom)`,ES6,redux,webpack。从一个文件夹开始！
-
-> 前期准备：安装node,npm
+ 本项目使用react`(react + react-dom)`,ES6,redux,webpack。从一个文件夹开始！  
+前期准备：安装node,npm
 
 ## 搭建项目
 1. `npm init` => 当前项目会生成 package.json 文件
@@ -40,3 +39,26 @@
     }
 
     ```
+
+    **这里补充一点`node.js`的知识**
+
+    > `var path = require('path');`
+
+   [ **`path`** ](https://nodejs.org/docs/latest-v5.x/api/path.html)
+   是node的一个模块,在官网有详细的文档。我们这里用到的是 `path.join()` ,
+   可接受一个或多个参数，返回将这些字符串参数结合而成的路径字符串。
+
+    > __dirname
+
+    用于获取当前模块所在**目录**的完整**绝对路径**。  
+    还有一个`__filename`，可获取当前模块**文件**的带有完整绝对路径的**文件名**。
+
+
+
+
+
+
+
+
+
+
