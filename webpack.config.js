@@ -24,17 +24,20 @@ module.exports = {
                     path.join(__dirname, "app"),
                     path.join(__dirname, "components")
                 ],
-                loaders: ['react-hot', 'babel']
+                loaders: ['react-hot', 'babel', 'babel-loader']
 
 
             },
+        
             {
                 test: /\.css$/,
+                exclude: ['/node_modules/','/test/','/dist/'],
                 loader: "style!css"
             },
             {
-                test: /\.less/,
-                loader: 'style-loader!css-loader!less-loader'
+                test: /\.scss/,
+                exclude: ['/node_modules/','/test/','/dist/'],
+                loader: 'style-loader!css-loader!scss-loader'
             }
         ]
     }
