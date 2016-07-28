@@ -15,7 +15,8 @@
 
     因为会使用 JSX & ES6 ,就必须为它们的编译做些准备，这里我们使用*babel*，
     *babel*可以将我们的ES6 & JSX 编译成浏览器可以识别的语句。
-4. webpack的配置文件
+4. webpack的配置文件 webpack.config.js. webpack 默认会使用当前目录下的webpack.config.js,
+    当然你也可以通过 `--config webpack.config.dev.js` 来指定使用某个文件。
 
     ```
     var path = require('path');
@@ -28,9 +29,14 @@
             path: path.join(__dirname, '/dist'),//输出路径
             filename: 'bundle.js'//文件名
         },
+
+        //这个属性里主要设置extensions, 也就是文件后缀名
+        //默认： ["", ".webpack.js", ".web.js", ".js"],
+        //如果我们的项目里包含CoffeeScript,jsx，就要添加 .coffee & .jsx
         resolve: {
-            extensions: ['', '.js', '.jsx']
+            //extensions: ['', '.js', '.jsx']
         },
+
         module: {
             loaders: [
                 { test: /\.js|jsx$/, loaders: ['babel'] }
