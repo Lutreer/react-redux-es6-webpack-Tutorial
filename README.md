@@ -30,9 +30,9 @@
             filename: 'bundle.js'//文件名
         },
 
-        //这个属性里主要设置extensions, 也就是文件后缀名
-        //默认： ["", ".webpack.js", ".web.js", ".js"],
-        //如果我们的项目里包含CoffeeScript,jsx，就要添加 .coffee & .jsx
+        //设置文件后缀名，默认： ["", ".webpack.js", ".web.js", ".js"],
+        //如果我们的项目里包含sass,jsx，可以添加 .coffee & .jsx,这样在引用这些文件时就不用写后缀了
+        //不过我觉得还是写上会更好
         resolve: {
             //extensions: ['', '.js', '.jsx']
         },
@@ -59,7 +59,12 @@
     用于获取当前模块所在**目录**的完整**绝对路径**。  
     还有一个`__filename`，可获取当前模块**文件**的带有完整绝对路径的**文件名**。
 
+## 如何使用webpack
 
+webpack 开发环境下编译
+webpack -p 产品编译及压缩
+webpack --watch 开发环境下持续的监听文件变动来进行编译(非常快!)
+webpack -d 引入 source maps
 
 
 
