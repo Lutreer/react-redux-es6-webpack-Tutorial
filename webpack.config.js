@@ -13,7 +13,6 @@ module.exports = {
     //     'webpack/hot/only-dev-server',
     //     './app/index'
     // ],
-
     entry: {
         index: './app/index'
     },
