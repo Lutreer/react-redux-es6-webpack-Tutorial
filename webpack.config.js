@@ -5,7 +5,6 @@ var CONST = {
     EXCLUDE: ['/node_modules/', '/test/', '/dist/'],
     INCLUDE: ["/app/", "/components/"],
 }
-var exclude = []
 
 module.exports = {
     // entry: [
@@ -13,13 +12,11 @@ module.exports = {
     //     'webpack/hot/only-dev-server',
     //     './app/index'
     // ],
-    entry: {
-        index: './app/index'
-    },
+    entry: './app/index.js',
 
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: '[name].bundle.[hash].js'
+        filename: 'bundle.[hash].js'
     },
 
     resolve: {
@@ -27,21 +24,19 @@ module.exports = {
     },
 
     module: {
-        loaders: [
-            {
-                test: /\.js[x]$/,
-                include: CONST.INCLUDE,
-                loader: ['react-hot', 'babel'],
-                cacheDirectory:true,
+        loaders: [{
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: ['/node_modules/', '/test/', '/dist/'],
                 query: {
-                    presets: ['react', 'es2015', 'stage-2']
-                },
+                    presets: ['react', 'es2015']
+                }
             },
 
             {
                 test: /\.scss$/,
                 exclude: CONST.EXCLUDE,
-                loader: '!style!css!sass'
+                loader: 'style!css!sass'
             },
 
             {
@@ -55,12 +50,12 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.CommonsChunkPlugin('react', 'react.js'),
-        new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
-    })
+        //new webpack.HotModuleReplacementPlugin(),
+        // new webpack.optimize.CommonsChunkPlugin('react', 'react-dom'),
+        // new webpack.optimize.UglifyJsPlugin({
+        //     compress: {
+        //         warnings: false
+        //     }
+        // })
     ],
 }
