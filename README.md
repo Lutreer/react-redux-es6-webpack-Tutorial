@@ -67,6 +67,18 @@ webpack --watch 开发环境下持续的监听文件变动来进行编译(非常
 webpack -d 引入 source maps
 
 
+1. webpack-dev-server：这是Webpack提供的一个基于Express的开发服务器，是一个静态资源Web服务器，可以直接在浏览器里以这样的方式访问：http://localhost:8080
+
+2. babel-plugin-react-transform：代替react-hot-loader的插件，是基于Babel Plugin的。这是一个基本的架子，要实现热替换还要安装其他插件。
+
+3. react-transform-hmr：安装这个才能实现热替换的功能。
+
+4. babel-preset-react-hmre：让Babel知道HMR（热替换），涉及到了webpack.config.js里loader为babel（也就是js、jsx使用babel-loader地方）的配置。
+
+5. react-transform-catch-errors、redbox-react：这两个插件把catch到的错误直接显示到页面上，就不用再打开控制台看了 。不过这两个是为了看到错误方便而安装的，实际可以不安
+
+`npm install babel-preset-react-hmre --save-dev` 会把其它的都install
+
 
 
 

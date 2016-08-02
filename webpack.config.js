@@ -7,30 +7,33 @@ var CONST = {
 }
 
 module.exports = {
-    // entry: [
-    //     'webpack-dev-server/app?http://localhost:3000',
-    //     'webpack/hot/only-dev-server',
-    //     './app/index'
-    // ],
-    entry: './app/index.js',
+    entry: {
+        bundle: path.resolve(__dirname, 'app/index.js'),
+        vendors: ['react', 'react-dom']
+    },
 
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle.[hash].js'
+        filename: 'bundle-[chunkhash:8].js'
     },
 
     resolve: {
         extensions: ['', '.js', '.jsx', 'scss']
     },
 
+    // devtool: 'eval-source-map',
+    devServer: {
+        historyApiFallback: true,
+        hot: true,
+        inline: true,
+        progress: true
+    },
+
     module: {
         loaders: [{
-                test: /\.js$/,
+                test: /\.js| jsx$/,
                 loader: 'babel',
-                exclude: ['/node_modules/', '/test/', '/dist/'],
-                query: {
-                    presets: ['react', 'es2015']
-                }
+                exclude: CONST.EXCLUDE,
             },
 
             {
@@ -50,12 +53,16 @@ module.exports = {
         ]
     },
     plugins: [
-        //new webpack.HotModuleReplacementPlugin(),
-        // new webpack.optimize.CommonsChunkPlugin('react', 'react-dom'),
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendor-[chunkhash:8].js')
+        //webpack-dev-server --hot --inline        
+        // new webpack.HotModuleReplacementPlugin(),
+        // new webpack.NoErrorsPlugin(),
         // new webpack.optimize.UglifyJsPlugin({
+        //     minimize: true,
         //     compress: {
         //         warnings: false
-        //     }
-        // })
+        //     },
+        // }),
+
     ],
 }
