@@ -6,8 +6,6 @@ import yilongImg from './img/yilong.png';
 class Hello extends Component {
     constructor() {
         super()
-        this.state = { data: [] }
-        debugger
     }
     testClick() {
         debugger
