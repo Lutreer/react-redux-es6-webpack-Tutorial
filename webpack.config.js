@@ -1,5 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path'),
+    webpack = require('webpack'),
+    HtmlWebpackPlugin = require('html-webpack-plugin'),
+    CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var CONST = {
     EXCLUDE: ['/node_modules/', '/test/', '/dist/'],
@@ -21,7 +23,6 @@ module.exports = {
         extensions: ['', '.js', '.jsx', 'scss']
     },
 
-    // devtool: 'eval-source-map',
     devServer: {
         historyApiFallback: true,
         hot: true,
@@ -47,22 +48,39 @@ module.exports = {
                 loader: 'url-loader',
                 query: {
                     name: '[path][name].[ext]?[hash:8]',
-                    limit: 8192
+                    limit: 4096
                 }
             }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendor-[chunkhash:8].js')
-        //webpack-dev-server --hot --inline        
-        // new webpack.HotModuleReplacementPlugin(),
-        // new webpack.NoErrorsPlugin(),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     minimize: true,
-        //     compress: {
-        //         warnings: false
-        //     },
-        // }),
+        new CleanWebpackPlugin(['dist']),
+        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendor-[hash:8].js'),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: false,
+            comments: false,
+            compress: {
+                warnings: false
+            },
+        }),
+
+        new HtmlWebpackPlugin({
+            template: './app/index.html'
+        })
 
     ],
+    eslint: {
+        configFile: '.eslintrc',
+        quiet: true,
+        failOnWarning: false
+    }
 }
+
+
+// new webpack.DefinePlugin({
+//     "process.env": {
+//         NODE_ENV: JSON.stringify("production")
+//     }
+// }),

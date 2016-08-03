@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "node": false,
+        "commonjs": false
+    },
+    "ecmaFeatures": {
+        // lambda表达式  
+        "arrowFunctions": true,
+        // 解构赋值  
+        "destructuring": true,
+        // class  
+        "classes": true,
+        "defaultParams": true,
+        // 块级作用域，允许使用let const  
+        "blockBindings": true,
+        // 允许使用模块，模块内默认严格模式  
+        "modules": true,
+        // 允许字面量定义对象时，用表达式做属性名  
+        "objectLiteralComputedProperties": true,
+        // 允许对象字面量方法名简写  
+        "objectLiteralShorthandMethods": true
+    },
+
+    "rules": {
+        // 在块级作用域外访问块内定义的变量是否报错提示 
+        "block-scoped-var": 0,
+        // if while function 后面的{必须与if在同一行，java风格。  
+        "brace-style": [2, "1tbs", { "allowSingleLine": true }],
+        // 双峰驼命名格式  
+        "camelcase": 2
+    }
+}
