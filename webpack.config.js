@@ -16,7 +16,7 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, '/dist'),
-        filename: 'bundle-[chunkhash:8].js'
+        filename: './app/bundle-[chunkhash:8].js'
     },
 
     resolve: {
@@ -55,7 +55,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
-        new webpack.optimize.CommonsChunkPlugin('vendors', 'vendor-[hash:8].js'),
+        new webpack.optimize.CommonsChunkPlugin('vendors', './app/vendor-[hash:8].js'),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.UglifyJsPlugin({
@@ -77,10 +77,3 @@ module.exports = {
         failOnWarning: false
     }
 }
-
-
-// new webpack.DefinePlugin({
-//     "process.env": {
-//         NODE_ENV: JSON.stringify("production")
-//     }
-// }),
