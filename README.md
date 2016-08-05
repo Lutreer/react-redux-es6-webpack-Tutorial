@@ -1,6 +1,6 @@
 # react
 
- 本项目使用react`(react + react-dom)`,ES6,redux,webpack。从一个文件夹开始！  
+ 本项目使用react`(react + react-dom)`,ES6,redux,webpack,sass。从一个文件夹开始！  
 前期准备：安装node,npm
 
 ## 搭建项目
@@ -204,13 +204,4 @@ webpack -d 引入 source maps
 5. react-transform-catch-errors、redbox-react：这两个插件把catch到的错误直接显示到页面上，就不用再打开控制台看了。不过这两个是为了看到错误方便而安装的，实际可以不安
 
     *`npm install babel-preset-react-hmre --save-dev` 会把其它的都install*
-
-
-
-
-
-
-
-
-
 

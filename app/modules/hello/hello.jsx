@@ -7,7 +7,7 @@ class Hello extends Component {
     constructor() {
         super()
     }
-    testClick() {
+    testClick(e) {
         debugger
         alert(this)
     }
