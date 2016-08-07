@@ -32,7 +32,6 @@ class Hello extends Component {
                     Hello!{ this.props.name }
                     <img src={yilongImg}/>
                 </div>
-                
                 <input
                     type="text"
                     value={this.state.inputText}
