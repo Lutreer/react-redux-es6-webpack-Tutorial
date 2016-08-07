@@ -1,39 +1,40 @@
 {
-    "name": "react-redux-es6-webpack",
-    "version": "1.0.0",
-    "description": "A React Project",
-    "main": "index.js",
-    "scripts": {
-        "dev": "webpack-dev-server --process --profile --colors --hot --inline --devtool eval --config webpack.config.js",
-        "build": "webpack -p --process --colors --profile --config webpack.config.js"
-    },
-    "author": "Leasong",
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Lutreer/react-redux-es6-webpack-Tutorial"
-    },
-    "dependencies": {
-        "webpack": "^1.13.1"
-    },
-    "devDependencies": {
-        "babel-core": "^6.11.4",
-        "babel-loader": "^6.2.4",
-        "babel-preset-es2015": "^6.9.0",
-        "babel-preset-react": "^6.11.1",
-        "babel-preset-react-hmre": "^1.1.1",
-        "clean-webpack-plugin": "^0.1.10",
-        "css-loader": "^0.23.1",
-        "eslint": "^3.2.0",
-        "eslint-loader": "^1.5.0",
-        "file-loader": "^0.9.0",
-        "html-webpack-plugin": "^2.22.0",
-        "node-sass": "^3.8.0",
-        "react": "^15.3.0",
-        "react-dom": "^15.3.0",
-        "sass-loader": "^4.0.0",
-        "style-loader": "^0.13.1",
-        "url-loader": "^0.5.7",
-        "webpack-dev-server": "^1.14.1"
-    }
+  "name": "react-redux-es6-webpack",
+  "version": "1.0.0",
+  "description": "A React Project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --process --profile --colors --hot --inline --devtool eval --config webpack.config.js",
+    "build": "webpack -p --process --colors --profile --config webpack.config.js"
+  },
+  "author": "Leasong",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lutreer/react-redux-es6-webpack-Tutorial"
+  },
+  "dependencies": {
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "clean-webpack-plugin": "^0.1.10",
+    "css-loader": "^0.23.1",
+    "eslint": "^3.2.0",
+    "eslint-loader": "^1.5.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.22.0",
+    "node-gyp": "^3.4.0",
+    "node-sass": "^3.8.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack-dev-server": "^1.14.1"
+  }
 }
