@@ -35,6 +35,7 @@
         "babel-loader": "^6.2.4",
         "babel-preset-es2015": "^6.9.0",/*ES6 -> ES5*/
         "babel-preset-react": "^6.11.1",/*JSX -> ES5*/
+        "babel-preset-stage-0": "^6.5.0",/*当然是为了使用更方便的语法喽，比如decorator，在类中使用箭头函数等*/
 
         /*react hot module reload react组件热加载，需要配合webpack-server-dev使用（详细看下面的“使用webpack启动项目”）
         install的时候还会给我们安装几个依赖：babel-preset-react-hmre，react-transform-hmr，react-transform-catch-errors，redbox-react*/
