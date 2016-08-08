@@ -11,9 +11,13 @@
 2. 全局安装`webpack`：`npm install webpack -g`
 3. 全局安装`react` & `react-dom` : `npm install react -g` & `npm install ract-dom -g`
     
-    值得注意的是，从react的0.14开始从react中分离出来一个react-dom,只需知道就可以了，
-    毕竟react一直在前进，老的API了解即可，这样就为web版的react和移动端的React Native
-    共享组件铺平了道路。也就是说我们可以跨平台使用相同的react组件，这是很值得期待的！
+    值得注意的是，从react的0.14开始从react中分离出来一个react-dom,react一直在前进，
+    老的API了解即可，这样就为web版的react和移动端的React Native共享组件铺平了道路。
+    也就是说我们可以跨平台使用相同的react组件，这是很值得期待的！  
+    其中react中包含createElement, createClass,Component,PropTypes,Children 这些 API，
+    而react-dom中包含render,unmountComponentAtNode,findDOMNode.而且现在也不需要使用
+    `this.refs.xxx.getDOMNode()`或`React.findDOMNode(this.refs.xxx)`来获取真正的DOM节点，
+    `this.refs.xxx`本身就指向了DOM节点，详细会在后面的教程中介绍。
 
 3. 安装`babel`：`npm install babel-loader babel-preset-es2015 babel-preset-react --save-dev`
 
