@@ -16,4 +16,6 @@ node_modules
 dist
 .bundle.js
 coverage
+.idea
+.vscode
 
