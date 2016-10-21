@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './hello.scss';
 import helloImg from './img/hello.jpg';
 import yilongImg from './img/yilong.png';
 
-class Hello extends Component {
+class Hello extends React.Component {
     constructor() {
         super()
         this.state = {

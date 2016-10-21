@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../common/const_action_type.js'
+import ACTION_TYPE from '../common/constActionType'
 
 /**
  *
@@ -6,9 +6,9 @@ import ACTION_TYPE from '../common/const_action_type.js'
  * @param action
  * @returns {{newState}}
  */
-let todoReducer = function(prevTodos = [], action){
+let todoReducer = function(prevTodos = [], action) {
 
-    switch (action.type){
+    switch (action.type) {
         case ACTION_TYPE.TODO.ADD:
             return [{
                 id: Math.random().toFixed(1) * 100,
@@ -20,6 +20,13 @@ let todoReducer = function(prevTodos = [], action){
             return todos.filter(() => {
                 prevTodos.id !== action.id
             })
+            case ACTION_TYPE.TODO.COMPLETE:
+                return todos.map((todo) => {
+                    return todo.id === action.id ?
+                        Object.assign({}, todo, {
+                            completed: !todo.completed
+                        }) : todo
+                })
 
         default:
             return prevTodos

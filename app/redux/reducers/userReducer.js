@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../common/const_action_type.js'
+import ACTION_TYPE from '../common/constActionType'
 
 let userReducer = function(user = {}, action) {
     switch (action.type) {

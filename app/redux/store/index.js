@@ -21,3 +21,12 @@ let configureStore = function (initialstate = { todos: [], user: {}}) {
 }
 
 export default configureStore
+
+
+//如果不用compose(), 可以直接createStore(),注意参数顺序！
+// const store = createStore(
+//   reducer,
+//   initial_state,
+//   enhancer //applyMiddleware(logger)
+// );
+//export default  store

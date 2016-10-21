@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../common/const_action_type'
+import ACTION_TYPE from '../common/constActionType'
 
 let actions = {
     addTodo: function(text){
@@ -7,9 +7,15 @@ let actions = {
             text: text
         }
     },
+    deleteTodo: function(id){
+        return {
+            type:ACTION_TYPE.TODO.DELETE,
+            id:id
+        }
+    },
     completeTodo: function(id){
         return {
-            type: ACTION_TYPE.TODO.DELETE,
+            type: ACTION_TYPE.TODO.COMPLETE,
             id: id
         }
     }

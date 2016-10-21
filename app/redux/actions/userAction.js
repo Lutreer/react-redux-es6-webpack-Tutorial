@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../common/const_action_type'
+import ACTION_TYPE from '../common/constActionType'
 
 let actions = {
     createNewUser: function(text){
