@@ -1,40 +1,27 @@
 import React from 'react';
 
 
-class TodoInput extends Component{
-  constructor() {
-    supper()
-    this.state = {
-        placeholder: 'Please input TODO here',
-        todoValue:''
+class TodoInput extends React.Component{
+
+
+    createNewTodo = (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        let text = this.refs.createInput
+        this.props.actions.createNewTodo(text)
     }
-  }
 
-  createNewTodo = (a, b) => {
-    alert(a + b)
-  }
+    render(){
 
-
-
-  render(){
-
-    return(
-      <div>
-        <div>
-          <input
-          placeholder={this.state.placeholder}
-          value={this.state.todoValue}
-          />
-
-          <button onClick={this.createNewTodo(this.state.placeholder, 'just string')}>ADD</button>
-        </div>
-
-
-
-      </div>
-
-    )
-  }
+        return(
+            <div>
+                <form onSubmit = {this.createNewTodo}>
+                    <input type="text" refs="createInput" placeholder="请输入要做的事情..."/>
+                    <button type="submit">新增</button>
+                </form>
+            </div>
+        )
+    }
 
 
 }

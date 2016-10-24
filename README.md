@@ -10,7 +10,7 @@
 1. `npm init` => 当前项目会生成 package.json 文件
 2. 全局安装`webpack`：`npm install webpack -g`
 3. 全局安装`react` & `react-dom` : `npm install react -g` & `npm install ract-dom -g`
-    
+
     值得注意的是，从react的0.14开始从react中分离出来一个react-dom,react一直在前进，
     老的API了解即可，这样就为web版的react和移动端的React Native共享组件铺平了道路。
     也就是说我们可以跨平台使用相同的react组件，这是很值得期待的！  
@@ -26,45 +26,42 @@
     *(NOTE: bable-loader依赖babel依赖于babel-core，所以如果安装过程中提示需要安装这个，你就必须手动安装：`npm install babel-core --save-dev`)*  
 
     需要的loader还很多,就不再一一说明，一切都在注释里了
-```
-/*package.json*/
 
-    "dependencies": {
-        "webpack": "^1.13.1"
-    },
-    "devDependencies": {
-        "react": "^15.3.0",
-        "react-dom": "^15.3.0",
-        "babel-core": "^6.11.4",
-        "babel-loader": "^6.2.4",
-        "babel-preset-es2015": "^6.9.0",/*ES6 -> ES5*/
-        "babel-preset-react": "^6.11.1",/*JSX -> ES5*/
-        "babel-preset-stage-0": "^6.5.0",/*当然是为了使用更方便的语法喽，比如decorator，在类中使用箭头函数等*/
+```/*package.json*/
+"dependencies": {
+    "webpack": "^1.13.1"
+},
+"devDependencies": {
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",/*ES6 -> ES5*/
+    "babel-preset-react": "^6.11.1",/*JSX -> ES5*/
+    "babel-preset-stage-0": "^6.5.0",/*当然是为了使用更方便的语法喽，比如decorator，在类中使用箭头函数等*/
 
-        /*react hot module reload react组件热加载，需要配合webpack-server-dev使用（详细看下面的“使用webpack启动项目”）
-        install的时候还会给我们安装几个依赖：babel-preset-react-hmre，react-transform-hmr，react-transform-catch-errors，redbox-react*/
-        "babel-preset-react-hmre": "^1.1.1",
+    /*react hot module reload react组件热加载，需要配合webpack-server-dev使用（详细看下面的“使用webpack启动项目”）
+    install的时候还会给我们安装几个依赖：babel-preset-react-hmre，react-transform-hmr，react-transform-catch-errors，redbox-react*/
+    "babel-preset-react-hmre": "^1.1.1",
 
-        "clean-webpack-plugin": "^0.1.10",/*用来删除文件*/
-        "css-loader": "^0.23.1",/*与style-loader和sass-loader一起使用处理css或sass*/
-        "style-loader": "^0.13.1",
-        "sass-loader": "^4.0.0",
-        "node-sass": "^3.8.0",/*sass-loader依赖node-sass*/
-        "eslint": "^3.2.0",/*代码风格检测工具,辅助编码规范，控制代码质量，可以检测ES6和JSX*/
-        "eslint-loader": "^1.5.0",
-        "file-loader": "^0.9.0",/*与url-loader配合使用，项目中用处处理图片资源*/
-        "url-loader": "^0.5.7",/**/
-        "html-webpack-plugin": "^2.22.0",/*项目中用于将编译好的js文件路径自动在html中引入*/
-        "webpack-dev-server": "^1.14.1"/*是一个静态资源Web服务器*/
-    }
-
-```
+    "clean-webpack-plugin": "^0.1.10",/*用来删除文件*/
+    "css-loader": "^0.23.1",/*与style-loader和sass-loader一起使用处理css或sass*/
+    "style-loader": "^0.13.1",
+    "sass-loader": "^4.0.0",
+    "node-sass": "^3.8.0",/*sass-loader依赖node-sass*/
+    "eslint": "^3.2.0",/*代码风格检测工具,辅助编码规范，控制代码质量，可以检测ES6和JSX*/
+    "eslint-loader": "^1.5.0",
+    "file-loader": "^0.9.0",/*与url-loader配合使用，项目中用处处理图片资源*/
+    "url-loader": "^0.5.7",/**/
+    "html-webpack-plugin": "^2.22.0",/*项目中用于将编译好的js文件路径自动在html中引入*/
+    "webpack-dev-server": "^1.14.1"/*是一个静态资源Web服务器*/
+}```
 
 ### 配置文件
 
 配置文件才是重头戏，如果说项目是一个产品，语言是工具，但配置文件就是磨刀的利器啊，
 工欲善其事必先利其器！配置文件写的好，代码敲起来会有飞的感觉。
-先说说我们想要什么效果： 
+先说说我们想要什么效果：
 - ES6和JSX转换成浏览器可以识别ES5
 - 从一个JS入口文件开始所有的依赖打包在一个JS文件中，公共库提取出来方便做缓存。
 - Sass文件自动编译，一并打包进JS文件
@@ -209,4 +206,3 @@ webpack -d 引入 source maps
 5. react-transform-catch-errors、redbox-react：这两个插件把catch到的错误直接显示到页面上，就不用再打开控制台看了。不过这两个是为了看到错误方便而安装的，实际可以不安
 
     *`npm install babel-preset-react-hmre --save-dev` 会把其它的都install*
-
