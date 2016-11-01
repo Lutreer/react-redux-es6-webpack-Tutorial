@@ -7,8 +7,8 @@ class TodoInput extends React.Component{
     createNewTodo = (event) => {
         event.preventDefault()
         event.stopPropagation()
-        let text = this.refs.createInput
-        this.props.actions.createNewTodo(text)
+        let text = this.refs.createInput.value
+        this.props.actions.addTodo(text)
     }
 
     render(){
@@ -17,7 +17,7 @@ class TodoInput extends React.Component{
             <div>
                 <form onSubmit = {this.createNewTodo}>
                     <input type="text" refs="createInput" placeholder="请输入要做的事情..."/>
-                    <button type="submit">新增</button>
+                    <button type="submit" className="submitBtn">新增</button>
                 </form>
             </div>
         )
