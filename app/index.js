@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 //自定义的组件
 
 import TodoApp from './modules/todo'
+debugger
 import Hello from './modules/hello/hello.jsx';
 import './common/scss/index.scss';
 
@@ -23,7 +24,7 @@ let initialState = {
             text: 'Initial todo for demo purposes'
         },
         {
-            id: 0,
+            id: 1,
             completed: false,
             text: 'Initial todo for demo purposes'
         }
@@ -33,11 +34,10 @@ let initialState = {
         id: 1
     }
 }
-finalCreateStore
-let Store = finalCreateStore(initialState)
+let store = finalCreateStore(initialState)
 
 ReactDOM.render(
-    <provider store={Store}>
+    <Provider store={store}>
         <TodoApp/>
-    </provider>
+    </Provider>
 , document.querySelector("#app"))

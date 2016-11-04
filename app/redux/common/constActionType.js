@@ -6,7 +6,7 @@ const ACTION_TYPE = {
         COMPLETE: 'COMPLETE_TODO'
     },
     USER: {
-        CREATE_ID: 'CREATE_USER_ID'
+        CREATE: 'CREATE_USER'
     }
 }
 

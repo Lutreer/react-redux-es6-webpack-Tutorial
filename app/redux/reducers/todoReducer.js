@@ -1,37 +1,40 @@
 import ACTION_TYPE from '../common/constActionType'
 
+let getUniqueId = function getId(todos) {
+  return todos.reduce((maxId, todo) => {
+    return Math.max(todo.id, maxId)
+  }, -1) + 1
+}
+
+
 /**
  *
  * @param todos oldState
  * @param action
  * @returns {{newState}}
  */
-let todoReducer = function(prevTodos = [], action) {
+let todoReducer = function(todos = [], action) {
 
     switch (action.type) {
         case ACTION_TYPE.TODO.ADD:
             return [{
-                id: Math.random().toFixed(1) * 100,
+                id: getUniqueId(todos),
                 text: action.text,
                 complete: false
-            }, ...prevTodos]
+            }, ...todos]
 
         case ACTION_TYPE.TODO.DELETE:
-            return todos.filter(() => {
-                prevTodos.id !== action.id
+            return todos.filter(todo => todos.id !== action.id)
+        case ACTION_TYPE.TODO.COMPLETE:
+            return todos.map((todo) => {
+                return todo.id === action.id ?
+                    Object.assign({}, todo, {
+                        completed: !todo.completed
+                    }) : todo
             })
-            case ACTION_TYPE.TODO.COMPLETE:
-                return todos.map((todo) => {
-                    return todo.id === action.id ?
-                        Object.assign({}, todo, {
-                            completed: !todo.completed
-                        }) : todo
-                })
-
         default:
-            return prevTodos
+            return todos
     }
-    return {}
 }
 
 export default todoReducer

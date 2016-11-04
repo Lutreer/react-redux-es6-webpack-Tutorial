@@ -2,10 +2,10 @@ import ACTION_TYPE from '../common/constActionType'
 
 let userReducer = function(user = {}, action) {
     switch (action.type) {
-        case ACTION_TYPE.USER.CREATE_ID:
+        case ACTION_TYPE.USER.CREATE:
             return {
-                username: user.username,
-                id: action.id
+                username: action.userName,
+                id: Math.round(Math.random() * 100)
             }
         default:
             return user;

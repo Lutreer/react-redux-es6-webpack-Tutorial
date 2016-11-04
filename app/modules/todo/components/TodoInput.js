@@ -5,6 +5,7 @@ class TodoInput extends React.Component{
 
 
     createNewTodo = (event) => {
+        debugger 
         event.preventDefault()
         event.stopPropagation()
         let text = this.refs.createInput.value
@@ -22,6 +23,6 @@ class TodoInput extends React.Component{
             </div>
         )
     }
-
-
 }
+
+export default TodoInput

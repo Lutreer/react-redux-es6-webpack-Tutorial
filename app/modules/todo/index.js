@@ -12,6 +12,12 @@ import {render} from 'react-dom';
 //正常情况下，你的根组件应该嵌套在 <Provider> 中才能使用 connect() 方法。
 import {connect} from 'react-redux'
 
+//把 action creators 转成拥有同名 keys 的对象，但使用 dispatch 把每个 action creator 包围起来，这样可以直接调用它们。
+//一般情况下你可以直接在 Store 实例上调用 dispatch。如果你在 React 中使用 Redux，react-redux 会提供 dispatch 。
+//惟一使用 bindActionCreators 的场景是当你需要把 action creator 往下传到一个组件上，却不想让这个组件觉察到 Redux 的存在，
+//而且不希望把 Redux store 或 dispatch 传给它。
+import { bindActionCreators } from 'redux'
+
 import todoActions from '../../redux/actions/todoAction'
 import userActions from '../../redux/actions/userAction'
 
@@ -24,8 +30,8 @@ import './todo.scss'
 class TodoApp extends React.Component {
 
     render(){
-
-
+        this
+        debugger
         return (
             <div className="submitBtn">
                 <h1>TODO 清单</h1>
@@ -43,6 +49,7 @@ class TodoApp extends React.Component {
 
 
 function mapStateToProps(state) {
+    debugger
   return {
       todoList: state.todos,
       user: state.user
@@ -53,10 +60,12 @@ function mapStateToProps(state) {
 //但是是使用 dispatch 把每个 action creator 包围起来，这样可以直接调用它们
 //eg.在 TodoInput.js 中: this.props.actions.createNewTodo(text),这里我们并没有 dispatch 一个action,
 function mapDispatchToProps(dispatch) {
+    var a = bindActionCreators(todoActions, dispatch)
+    debugger
   return {
-    todoActions: bindActionCreators(todoActions, dispatch),
-    userActions: bindActionCreators(userActions, dispatch)
-  }
+        todoActions: bindActionCreators(todoActions, dispatch),
+        userActions: bindActionCreators(userActions, dispatch)
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
