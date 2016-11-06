@@ -2,7 +2,7 @@
 const ACTION_TYPE = {
     TODO: {
         ADD: 'ADD_TODO',
-        DELETE: 'DELETE_TODo',
+        DELETE: 'DELETE_TODO',
         COMPLETE: 'COMPLETE_TODO'
     },
     USER: {

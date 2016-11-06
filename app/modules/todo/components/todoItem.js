@@ -12,17 +12,17 @@ class  TodoItem extends React.Component {
 
 
     handleComplete = (event) => {
-        this.props.actions.completeTodo(this.props.todo.id)
+        this.props.actions.completeTodo(this.props.datas.id)
     }
 
     handleDelete = (event) => {
-        this.props.actions.deleteTodo(this.props.todo.id)
+        this.props.actions.deleteTodo(this.props.datas.id)
     }
 
     render() {
         return (
             <li>
-                <div>{this.props.todo.text}</div>
+                <div>{this.props.datas.text}</div>
                 <button onClick={this.handleComplete}>标记为已完成</button>
                 <button onClick={this.handleDelete}>删除这条TODO</button>
             </li>

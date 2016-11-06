@@ -17,7 +17,6 @@ let finalCreateStore = compose(
  * @returns {*}
  */
 let configureStore = function (initialstate = { todos: [], user: {}}) {
-    debugger
     return finalCreateStore(rootReducer, initialstate)
 }
 

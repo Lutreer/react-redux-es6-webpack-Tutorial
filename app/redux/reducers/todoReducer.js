@@ -17,14 +17,14 @@ let todoReducer = function(todos = [], action) {
 
     switch (action.type) {
         case ACTION_TYPE.TODO.ADD:
-            return [{
+            return [ ...todos,{
                 id: getUniqueId(todos),
                 text: action.text,
                 complete: false
-            }, ...todos]
+            }]
 
         case ACTION_TYPE.TODO.DELETE:
-            return todos.filter(todo => todos.id !== action.id)
+            return todos.filter(todo => todo.id !== action.id)
         case ACTION_TYPE.TODO.COMPLETE:
             return todos.map((todo) => {
                 return todo.id === action.id ?

@@ -3,8 +3,8 @@ import userReducer from './userReducer'
 import todoReducer from './todoReducer'
 
 const rootReducer = combineReducers({
-    userReducer: userReducer,
-    todoReducer: todoReducer
+    //key 值要跟 state 的 key 相同
+    user: userReducer,
+    todos: todoReducer
 })
-debugger
 export default rootReducer

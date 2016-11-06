@@ -30,8 +30,6 @@ import './todo.scss'
 class TodoApp extends React.Component {
 
     render(){
-        this
-        debugger
         return (
             <div className="submitBtn">
                 <h1>TODO 清单</h1>
@@ -41,7 +39,7 @@ class TodoApp extends React.Component {
 
                 {/* 我们可以只给 <TodoList/> 传入 todo 的数据，否则无关的数据会导致每次 action 都触发整个 TodoApp 重新渲染 */}
                 {/* ### 所以，注意了！不要一股脑的注入 dispatch 和全局 state， 这样几乎所有你的优化都将泡汤，组件需要什么就给它什么。### */}
-                <TodoList datas={this.props.todoList} actions={this.props.todoActions}></TodoList>
+                <TodoList datas={this.props.todos} actions={this.props.todoActions}></TodoList>
             </div>
         )
     }
@@ -49,9 +47,8 @@ class TodoApp extends React.Component {
 
 
 function mapStateToProps(state) {
-    debugger
   return {
-      todoList: state.todos,
+      todos: state.todos,
       user: state.user
   }
 }
@@ -60,8 +57,6 @@ function mapStateToProps(state) {
 //但是是使用 dispatch 把每个 action creator 包围起来，这样可以直接调用它们
 //eg.在 TodoInput.js 中: this.props.actions.createNewTodo(text),这里我们并没有 dispatch 一个action,
 function mapDispatchToProps(dispatch) {
-    var a = bindActionCreators(todoActions, dispatch)
-    debugger
   return {
         todoActions: bindActionCreators(todoActions, dispatch),
         userActions: bindActionCreators(userActions, dispatch)
