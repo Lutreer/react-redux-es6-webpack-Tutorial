@@ -32,6 +32,13 @@ let todoReducer = function(todos = [], action) {
                         completed: !todo.completed
                     }) : todo
             })
+        case ACTION_TYPE.TODO.UPDATE:
+            return todos.map((todo) => {
+                return todo.id === action.id ?
+                    Object.assign({}, todo, {
+                        text: action.text
+                    }) : todo
+            })
         default:
             return todos
     }

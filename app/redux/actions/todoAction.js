@@ -13,6 +13,13 @@ let actions = {
             id:id
         }
     },
+    updateThisTodo: function(id,text){
+        return {
+            type:ACTION_TYPE.TODO.UPDATE,
+            id:id,
+            text:text
+        }
+    },
     completeTodo: function(id){
         return {
             type: ACTION_TYPE.TODO.COMPLETE,

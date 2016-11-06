@@ -10,6 +10,9 @@ import React from 'react'
 // 4.不使用任何 Redux 的 API
 class  TodoItem extends React.Component {
 
+    updateThis = (event) => {
+        this.props.actions.updateThisTodo(this.props.datas.id,this.props.datas.text)
+    }
 
     handleComplete = (event) => {
         this.props.actions.completeTodo(this.props.datas.id)
@@ -23,6 +26,7 @@ class  TodoItem extends React.Component {
         return (
             <li>
                 <div>{this.props.datas.text}</div>
+                <button onClick={this.updateThis}>更新不改变，测试不可变对象</button>
                 <button onClick={this.handleComplete}>标记为已完成</button>
                 <button onClick={this.handleDelete}>删除这条TODO</button>
             </li>
