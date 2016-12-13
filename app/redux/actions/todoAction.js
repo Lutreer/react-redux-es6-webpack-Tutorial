@@ -26,6 +26,12 @@ let actions = {
             id: id
         }
     }
+    // getPageData:function(pageNum){
+    //     return {
+    //         type: ACTION_TYPE.TODO.GET_PAGE_DATA,
+    //         pageNum: pageNum
+    //     }
+    // }
 }
 
 export default actions

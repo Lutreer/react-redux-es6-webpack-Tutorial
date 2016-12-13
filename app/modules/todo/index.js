@@ -40,6 +40,7 @@ class TodoApp extends React.Component {
                 {/* 我们可以只给 <TodoList/> 传入 todo 的数据，否则无关的数据会导致每次 action 都触发整个 TodoApp 重新渲染 */}
                 {/* ### 所以，注意了！不要一股脑的注入 dispatch 和全局 state， 这样几乎所有你的优化都将泡汤，组件需要什么就给它什么。### */}
                 <TodoList datas={this.props.todos} actions={this.props.todoActions}></TodoList>
+
             </div>
         )
     }
