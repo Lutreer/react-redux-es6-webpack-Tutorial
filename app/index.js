@@ -10,11 +10,11 @@ import { Provider } from 'react-redux';
 //自定义的组件
 
 import TodoApp from './modules/todo'
+import TodoApp2 from './modules/todo'
 import Hello from './modules/hello/hello.jsx';
 import './common/scss/index.scss';
 
 
-//正常情况是从服务端获取渲染页面的初始值
 let initialState = {
     todos: [
         {
@@ -33,15 +33,42 @@ let initialState = {
         id: 1
     }
 }
+
+
+let initialState2 = {
+    todos: {
+        list:[{
+            id: 0,
+            completed: false,
+            text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        },
+        {
+            id: 1,
+            completed: false,
+            text: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+        }],
+        paging :{
+            curPage:0,
+            totalPage:20,
+            amount:100
+        }
+    },
+    user: {
+        username: 'leasong',
+        id: 1
+    }
+}
 let store = finalCreateStore(initialState)
+let store2 = finalCreateStore(initialState2)
 
 ReactDOM.render(
-    <Provider store={store}>
         <div>
-            <TodoApp/>
-            <TodoApp/>
-
+            <Provider store={store}>
+                <TodoApp/>
+            </Provider>
+            <Provider store={store2}>
+                <TodoApp2/>
+            </Provider>
         </div>
-    </Provider>
 
 , document.querySelector("#app"))

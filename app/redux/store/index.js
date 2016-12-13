@@ -1,7 +1,7 @@
 import { applyMiddleware, compose, createStore } from 'redux'//compose 方法我们以后再用
 import rootReducer from '../reducers'//combine后的所有reducers
 import logger from 'redux-logger'//一个输出日志的中间件
-import thunk from 'redux-thunk'//用于异步请求:applyMiddleware(thunk)，也可以用redux-promise
+import thunk from 'redux-thunk'//用于异步请求:applyMiddleware(thunk)，也可以用redux-promise 或 redux-saga
 
 /**
  * compose:从右到左来组合多个函数(reduceRight, currying)
