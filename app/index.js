@@ -62,7 +62,7 @@ let store = finalCreateStore(initialState)
 let store2 = finalCreateStore(initialState2)
 
 ReactDOM.render(
-        <div>
+        <div className="container">
             <Provider store={store}>
                 <TodoApp/>
             </Provider>
