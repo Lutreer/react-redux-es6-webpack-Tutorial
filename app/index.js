@@ -36,8 +36,7 @@ let initialState = {
 
 
 let initialState2 = {
-    todos: {
-        list:[{
+    todos: [{
             id: 0,
             completed: false,
             text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
@@ -47,12 +46,6 @@ let initialState2 = {
             completed: false,
             text: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbb'
         }],
-        paging :{
-            curPage:0,
-            totalPage:20,
-            amount:100
-        }
-    },
     user: {
         username: 'leasong',
         id: 1

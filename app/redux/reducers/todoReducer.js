@@ -68,12 +68,12 @@ export default todoReducer
 
 
 
-const fetchPosts =
-  (dispatch, postTitle) => new Promise(function (resolve, reject) {
-     dispatch(requestPosts(postTitle));
-     return fetch(`/some/API/${postTitle}.json`)
-               .then(response => {
-                     type: 'FETCH_POSTS',
-                     payload: response.json()
-               });
-  });
+// const fetchPosts =
+//   (dispatch, postTitle) => new Promise(function (resolve, reject) {
+//      dispatch(requestPosts(postTitle));
+//      return fetch(`/some/API/${postTitle}.json`)
+//                .then(response => {
+//                      type: 'FETCH_POSTS',
+//                      payload: response.json()
+//                });
+//   });
