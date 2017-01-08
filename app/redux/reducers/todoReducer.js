@@ -1,4 +1,4 @@
-import ACTION_TYPE from '../common/constActionType'
+import ACTION_TYPE from '../common/action_type/constActionType'
 import immutable from 'immutable'
 
 let getUniqueId = function getId(todos) {

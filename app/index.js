@@ -20,7 +20,7 @@ let initialState = {
         {
             id: 0,
             completed: false,
-            text: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+            text: '1111111111111111111111111111111111111'
         },
         {
             id: 1,
