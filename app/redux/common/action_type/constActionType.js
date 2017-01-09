@@ -1,5 +1,4 @@
 //统一管理 action type
-
 const ACTION_TYPE = {
     TODO: {
         ADD: 'ADD_TODO',
@@ -17,6 +16,4 @@ const ACTION_TYPE = {
         FETCH_FAILED: 'FETCH_FAILED'
     },
 };
-
-
 export default ACTION_TYPE
