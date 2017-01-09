@@ -1,5 +1,7 @@
+import "babel-polyfill";
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
 import finalCreateStore from './redux/store';
 
 //react-redux 提供两个API:Provider & connect(在./modules/todo/todo.js里有解释)
@@ -51,8 +53,8 @@ let initialState2 = {
         id: 1
     }
 }
-let store = finalCreateStore(initialState)
-let store2 = finalCreateStore(initialState2)
+let store = finalCreateStore
+let store2 = finalCreateStore
 
 ReactDOM.render(
         <div className="container">

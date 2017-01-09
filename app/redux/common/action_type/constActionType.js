@@ -4,10 +4,16 @@ const ACTION_TYPE = {
         ADD: 'ADD_TODO',
         DELETE: 'DELETE_TODO',
         UPDATE: 'UPDATE_TODO',
-        COMPLETE: 'COMPLETE_TODO'
+        COMPLETE: 'COMPLETE_TODO',
+        SELECT: 'SELECT_ALL_TODOS'
     },
     USER: {
         CREATE: 'CREATE_USER'
+    },
+    COMMON: {
+        FETCH_LOADING: 'FETCH_LOADING',
+        FETCH_SUCCEEDED: 'FETCH_SUCCEEDED',
+        FETCH_FAILED: 'FETCH_FAILED'
     }
 }
 

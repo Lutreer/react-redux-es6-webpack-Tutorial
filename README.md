@@ -4,9 +4,9 @@
 前期准备：安装node,npm
 
 ## 搭建项目
----
 
 ### 项目依赖
+
 1. `npm init` => 当前项目会生成 package.json 文件
 2. 全局安装`webpack`：`npm install webpack -g`
 3. 全局安装`react` & `react-dom` : `npm install react -g` & `npm install ract-dom -g`
@@ -27,7 +27,8 @@
 
     需要的loader还很多,就不再一一说明，一切都在注释里了
 
-```/*package.json*/
+```
+/*package.json*/
 "dependencies": {
     "webpack": "^1.13.1"
 },
@@ -55,7 +56,8 @@
     "url-loader": "^0.5.7",/**/
     "html-webpack-plugin": "^2.22.0",/*项目中用于将编译好的js文件路径自动在html中引入*/
     "webpack-dev-server": "^1.14.1"/*是一个静态资源Web服务器*/
-}```
+}
+ ```
 
 ### 配置文件
 
@@ -178,12 +180,9 @@ module.exports = {
         quiet: true,
         failOnWarning: false
     }
-}
-
 ```
 
 ## 使用webpack启动项目
----
 
 ### 本地开发
 

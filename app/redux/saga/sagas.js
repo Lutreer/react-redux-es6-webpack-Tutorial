@@ -2,6 +2,7 @@ import { call, put, takeEvery, takeLatest } from 'redux-saga'
 import todoApi from '../common/api/todo/todoApis'
 
 function* fetchTodos(action) {
+    debugger
 
     // put(action) 等同于 dispatch(action), 其中 action 不产生副作用
     yield put({ type: 'FETCH_LOADING' })
@@ -27,7 +28,7 @@ function* todoSaga() {
     // yield takeEvery("USER_FETCH_REQUESTED", fetchUser)
 
     // takeLatest() 只会监控最新的一个 saga 任务, 比如说用于用户的连续点击
-    yield takeLatest("USER_FETCH_REQUESTED", fetchTodos)
+    yield takeLatest("SELECT_ALL_TODOS", fetchTodos)
 
 }
 

@@ -11,7 +11,7 @@ var CONST = {
 module.exports = {
     entry: {
         bundle: path.resolve(__dirname, 'app/index.js'),
-        vendors: ['react', 'react-dom']
+        vendors: ['react', 'react-dom','babel-polyfill']
     },
 
     output: {
