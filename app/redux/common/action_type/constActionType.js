@@ -1,4 +1,4 @@
-//统一管理 ation type
+//统一管理 action type
 const ACTION_TYPE = {
     TODO: {
         ADD: 'ADD_TODO',
