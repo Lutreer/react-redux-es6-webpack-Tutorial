@@ -111,7 +111,7 @@ module.exports = {
 
     output: {
         path: path.join(__dirname, '/dist'),//输出的文件路径
-        filename: 'bundle-[chunkhash:8].js'//文件名，chunkhash是根据文件内容计算的hash值
+        filename: 'bundle-[chunkhash:8].js'//文件名，chunkhash是根据chunk内容计算的hash值
     },
 
     resolve: {

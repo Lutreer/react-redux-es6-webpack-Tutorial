@@ -1,7 +1,8 @@
 var path = require('path'),
     webpack = require('webpack'),
     HtmlWebpackPlugin = require('html-webpack-plugin'),
-    CleanWebpackPlugin = require('clean-webpack-plugin');
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var CONST = {
     EXCLUDE: ['/node_modules/', '/test/', '/dist/'],
@@ -40,14 +41,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: CONST.EXCLUDE,
-                loader: 'style!css!sass'
+                loader: ExtractTextPlugin.extract('style','css!sass')
             },
 
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader',
                 query: {
-                    name: '[path][name].[ext]?[hash:8]',
+                    name: './app/images/[name].[ext]?[hash:8]',
                     limit: 4096
                 }
             }
@@ -55,6 +56,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
+        new ExtractTextPlugin("./app/style-[contenthash:5].css"),
         new webpack.optimize.CommonsChunkPlugin('vendors', './app/vendor-[hash:8].js'),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
