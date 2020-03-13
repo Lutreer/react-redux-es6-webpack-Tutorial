@@ -31,7 +31,7 @@ let initialState = {
         }
     ],
     user: {
-        username: 'leasong',
+        username: 'tom',
         id: 1
     }
 }
@@ -49,7 +49,7 @@ let initialState2 = {
             text: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbb'
         }],
     user: {
-        username: 'leasong',
+        username: 'tom',
         id: 1
     }
 }
