@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --process --profile --colors --hot --inline --devtool eval --config webpack.config.js",
     "build": "webpack -p --process --colors --profile --config webpack.config.js"
   },
-  "author": "Leasong",
+  "author": "lutreer",
   "license": "ISC",
   "repository": {
     "type": "git",
